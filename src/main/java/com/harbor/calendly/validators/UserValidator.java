@@ -13,8 +13,13 @@ public class UserValidator {
     @Autowired
     public UserRepo userRepo;
 
-    public boolean checkIfUserExists(String email) {
+    public boolean checkIfUserExistsByEmail(String email) {
         User user = userRepo.fetchUserByEmail(email);
+        return user != null;
+    }
+
+    public boolean checkIfUserExistsByUserId(String userId) {
+        User user = userRepo.fetchUserByUserId(userId);
         return user != null;
     }
 }

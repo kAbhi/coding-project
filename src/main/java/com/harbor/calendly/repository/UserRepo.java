@@ -6,5 +6,6 @@ public interface UserRepo {
 
     public User save(User user);
     public User fetchUserByEmail(String email);
+    public User fetchUserByUserId(String userId);
 
 }

@@ -27,7 +27,7 @@ public class UserAPI {
 
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody UserDTO userDTO) throws JSONException {
-        if(userValidator.checkIfUserExists(userDTO.getEmail())) {
+        if(userValidator.checkIfUserExistsByEmail(userDTO.getEmail())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.ADD_USER_UNIQUE_ERROR_ALREADY_EXISTS));
         }
         return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(userService.save(userDTO));

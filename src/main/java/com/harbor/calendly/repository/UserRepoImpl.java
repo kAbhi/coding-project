@@ -17,4 +17,9 @@ public class UserRepoImpl implements UserRepo {
     public User fetchUserByEmail(String email) {
         return null;
     }
+
+    @Override
+    public User fetchUserByUserId(String userId) {
+        return null;
+    }
 }
