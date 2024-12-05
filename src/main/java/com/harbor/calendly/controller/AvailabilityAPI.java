@@ -27,9 +27,9 @@ public class AvailabilityAPI {
 
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody AvailabilityDTO availabilityDTO) throws JSONException {
-//        if(userValidator.checkIfUserExists(userDTO.getEmail())) {
-//            return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.ADD_USER_UNIQUE_ERROR_ALREADY_EXISTS));
-//        }
+        if(!availabilityValidator.validateInputDTO(availabilityDTO)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.AVAILABILITY_ADD_ERROR_INVALID_INPUT));
+        }
         return ResponseEntity.status(HttpStatus.CREATED).contentType(MediaType.APPLICATION_JSON).body(availabilityService.save(availabilityDTO));
     }
 

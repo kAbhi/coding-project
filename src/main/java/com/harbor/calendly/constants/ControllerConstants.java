@@ -12,6 +12,8 @@ public class ControllerConstants {
 
     public static final String AVAILABILITY_ADD_SUCCESS_MESSAGE = "Availability added successfully.";
 
+    public static final String AVAILABILITY_ADD_ERROR_INVALID_INPUT = "Availability input has some error.";
+
     public static final String AVAILABILITY_ADD_ERROR_ALREADY_EXISTS = "Availability already exists.";
 
     public static final String AVAILABILITY_DELETE_SUCCESS_MESSAGE = "Deleted availability successfully.";
