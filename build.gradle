@@ -1,0 +1,64 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'idea'
+    id 'maven-publish'
+}
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.harbor.calendly'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // Lombok dependencies
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    // Open Feign
+    api("io.github.openfeign:feign-hystrix:${openFeignVersion}")
+    api("io.github.openfeign:feign-jackson:${openFeignVersion}")
+    api("io.github.openfeign:feign-core:${openFeignVersion}")
+    api("io.github.openfeign:feign-slf4j:${openFeignVersion}")
+    api("io.github.openfeign:feign-okhttp:${openFeignVersion}")
+
+    // Spring
+    api("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    api("org.springframework.boot:spring-boot-starter-web")
+    api("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    api("org.springframework.cloud:spring-cloud-starter-loadbalancer:${springLoadBalancerVersion}")
+
+    // Log4j
+    api("org.apache.logging.log4j:log4j-core")
+    api("org.apache.logging.log4j:log4j-api")
+    api("org.apache.logging.log4j:log4j-to-slf4j")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+    }
+}
