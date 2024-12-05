@@ -6,14 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
 import java.util.Map;
 import java.util.UUID;
 
 @Data
+@Table(name = "availability")
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class Availability {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private String id;
     private String userId;

@@ -7,11 +7,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.*;
+
 @Data
+@Entity
+@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String firstName;
     private String lastName;
