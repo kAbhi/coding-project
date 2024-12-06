@@ -19,8 +19,6 @@ public class User {
     private String fullname;
     private String email;
 //    private String phoneNumber;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Availability> availabilities;
 
     public static User transform(UserDTO userDTO) {
         User user = new User();

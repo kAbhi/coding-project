@@ -9,4 +9,6 @@ public interface AvailabilityService {
 
     public Availability save(AvailabilityDTO availabilityDTO);
     public List<Availability> fetchAvailabilityByUserId(Long userId);
+
+    List<Availability> findOverlap(Long userId1, Long userId2);
 }

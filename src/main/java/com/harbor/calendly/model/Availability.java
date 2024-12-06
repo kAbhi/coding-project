@@ -30,6 +30,11 @@ public class Availability {
         this.startTime = startTime;
         this.endTime = endTime;
     }
+    public Availability(User user1, User user2, LocalDateTime startTime, LocalDateTime endTime) {
+        this.user = user1;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 
 //    public static Availability transform(AvailabilityDTO availabilityDTO) {
 //        Availability availability = new Availability();

@@ -36,12 +36,18 @@ public class AvailabilityAPI {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity fetchUserByEmail(@PathVariable("userId") String userId) throws JSONException {
-        List<Availability> availability = availabilityService.fetchAvailabilityByUserId(Long.getLong(userId));
+    public ResponseEntity fetchUserByEmail(@PathVariable("userId") Long userId) throws JSONException {
+        List<Availability> availability = availabilityService.fetchAvailabilityByUserId(userId);
         if(availability == null || availability.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.AVAILABILITY_DELETE_ERROR_MISSING));
         }
         return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(availability);
+    }
+
+    @GetMapping("/overlap/{user1}/{user2}")
+    public ResponseEntity<List<Availability>> findOverlap(@PathVariable("user1") Long userId1, @PathVariable("user2") Long userId2) {
+        List<Availability> overlaps = availabilityService.findOverlap(userId1, userId2);
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(overlaps);
     }
 
 }
