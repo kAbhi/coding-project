@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AvailabilityRepo extends JpaRepository<Availability, String> {
+public interface AvailabilityRepo extends JpaRepository<Availability, Long> {
 
     public Availability save(Availability availability);
     public List<Availability> findByUserId(Long userId);
