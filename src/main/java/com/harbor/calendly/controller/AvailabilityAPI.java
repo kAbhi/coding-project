@@ -14,6 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/availability")
@@ -35,8 +37,8 @@ public class AvailabilityAPI {
 
     @GetMapping("/{userId}")
     public ResponseEntity fetchUserByEmail(@PathVariable("userId") String userId) throws JSONException {
-        Availability availability = availabilityService.fetchAvailabilityByUserId(userId);
-        if(availability == null) {
+        List<Availability> availability = availabilityService.fetchAvailabilityByUserId(Long.getLong(userId));
+        if(availability == null || availability.isEmpty()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.AVAILABILITY_DELETE_ERROR_MISSING));
         }
         return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(availability);

@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Slf4j
 @Component
 public class AvailabilityServiceImpl implements AvailabilityService {
@@ -22,7 +24,7 @@ public class AvailabilityServiceImpl implements AvailabilityService {
     }
 
     @Override
-    public Availability fetchAvailabilityByUserId(String userId) {
-        return availabilityRepo.fetchAvailabilityByUserId(userId);
+    public List<Availability> fetchAvailabilityByUserId(Long userId) {
+        return availabilityRepo.findByUserId(userId);
     }
 }

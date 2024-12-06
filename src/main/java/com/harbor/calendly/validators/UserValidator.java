@@ -14,12 +14,12 @@ public class UserValidator {
     public UserRepo userRepo;
 
     public boolean checkIfUserExistsByEmail(String email) {
-        User user = userRepo.fetchUserByEmail(email);
+        User user = userRepo.findByEmail(email);
         return user != null;
     }
 
     public boolean checkIfUserExistsByUserId(Long userId) {
-        User user = userRepo.fetchUserByUserId(userId);
+        User user = userRepo.findById(userId);
         return user != null;
     }
 }

@@ -1,6 +1,5 @@
-INSERT INTO USERS (id, name) VALUES (1, 'Abhishek');
-INSERT INTO USERS (id, name) VALUES (2, 'Aditi');
-
+INSERT INTO USERS (id, firstname, lastname, email) VALUES (1, 'Abhishek', 'Sharma', 'a1@s.com');
+INSERT INTO USERS (id, firstname, lastname, email) VALUES (2, 'Aditi', 'S', 'a2@s.com');
 
 INSERT INTO Availability (user_id, start_time, end_time)
 VALUES (1, '2026-12-05 09:00:00', '2026-12-05 12:00:00');

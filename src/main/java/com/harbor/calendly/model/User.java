@@ -2,13 +2,10 @@ package com.harbor.calendly.model;
 
 import com.harbor.calendly.dto.UserDTO;
 import com.harbor.calendly.utils.StringUtils;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Data
 @Entity
@@ -17,21 +14,21 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String fullName;
+    private String firstname;
+    private String lastname;
+    private String fullname;
     private String email;
-    private String phoneNumber;
+//    private String phoneNumber;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Map<String, Availability> availabilities;
+    private List<Availability> availabilities;
 
     public static User transform(UserDTO userDTO) {
         User user = new User();
         user.setId(userDTO.getId());
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
+        user.setFirstname(userDTO.getFirstName());
+        user.setLastname(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
-        user.setFullName(StringUtils.createFullName(userDTO.getFirstName(), userDTO.getLastName()));
+        user.setFullname(StringUtils.createFullName(userDTO.getFirstName(), userDTO.getLastName()));
         return user;
     }
 }

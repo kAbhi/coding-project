@@ -21,11 +21,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User fetchUserByEmail(String email) {
-        return userRepo.fetchUserByEmail(email);
+        return userRepo.findByEmail(email);
     }
 
     @Override
     public User fetchUserByUserId(Long userId) {
-        return userRepo.fetchUserByUserId(userId);
+        return userRepo.findById(userId);
     }
 }
