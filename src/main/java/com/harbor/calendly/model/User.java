@@ -14,19 +14,23 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstname;
-    private String lastname;
-    private String fullname;
+    @Column(name = "email", nullable = false)
     private String email;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    @Column(name = "full_name")
+    private String fullName;
 //    private String phoneNumber;
 
     public static User transform(UserDTO userDTO) {
         User user = new User();
         user.setId(userDTO.getId());
-        user.setFirstname(userDTO.getFirstName());
-        user.setLastname(userDTO.getLastName());
+        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
-        user.setFullname(StringUtils.createFullName(userDTO.getFirstName(), userDTO.getLastName()));
+        user.setFullName(StringUtils.createFullName(userDTO.getFirstName(), userDTO.getLastName()));
         return user;
     }
 }

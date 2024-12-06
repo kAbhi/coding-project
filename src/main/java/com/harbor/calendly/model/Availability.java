@@ -22,7 +22,10 @@ public class Availability {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "start_time")
     private LocalDateTime startTime;
+
+    @Column(name = "end_time")
     private LocalDateTime endTime;
 
     public Availability(User user, LocalDateTime startTime, LocalDateTime endTime) {
