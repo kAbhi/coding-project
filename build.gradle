@@ -47,6 +47,9 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     api("org.springframework.cloud:spring-cloud-starter-loadbalancer:${springLoadBalancerVersion}")
 
+    // H2 database
+    api("com.h2database:h2")
+
     // Log4j
     api("org.apache.logging.log4j:log4j-core")
     api("org.apache.logging.log4j:log4j-api")
