@@ -41,10 +41,15 @@ dependencies {
 
     // Spring
     api("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    api("org.springframework:spring-beans")
     api("org.springframework.boot:spring-boot-starter-web")
+    api("org.springframework.boot:spring-boot-starter-data-jpa")
     api("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     api("org.springframework.cloud:spring-cloud-starter-loadbalancer:${springLoadBalancerVersion}")
+
+    // H2 database
+    api("com.h2database:h2")
 
     // Log4j
     api("org.apache.logging.log4j:log4j-core")
