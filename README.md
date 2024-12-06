@@ -27,6 +27,7 @@ We care about
 1. Timezone support : I'm focusing on building basic functionality so timezone support is not available.
 2. Recurring events : Finding overlap in schedule has basic logic so recurring events is not supported.
 3. Performance : I'm assuming small-scale implementation and logic is not optimised for large input.
+4. Did not write unit tests, instead thought through future scope of product.
 
 - Q. Working code - we should be able to pull and hit the code locally. Bonus points if deployed somewhere.
 - A. Code can be pulled and run locally. It needs Java 17 and runs locally using Spring boot. Code uses in-memory H2 database.
@@ -35,6 +36,7 @@ You can run the CalendlyApplication.java after cloning the repo.
 - Q. Any good engineer will make hacks when necessary - what are your hacks and why?
 1. In-Memory DB : Using an in-memory DB for MVP instead of setting up full DB.
 2. Manual DTO mapping : Mapped the entity models with DTOs manually instead of using mapping library.
+3. Hacked manual testing the code using hard-coded data and calling API from postman. Saved time for future product scope instead from writing unit tests.
 
 We don't care about
 
