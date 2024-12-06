@@ -39,7 +39,7 @@ public class AvailabilityAPI {
         if(availability == null) {
             return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.AVAILABILITY_DELETE_ERROR_MISSING));
         }
-        return ResponseEntity.ok(ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(availability));
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(availability);
     }
 
 }

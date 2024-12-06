@@ -39,7 +39,7 @@ public class UserAPI {
         if(user == null) {
             return ResponseEntity.status(HttpStatus.CONFLICT).contentType(MediaType.APPLICATION_JSON).body(new JSONObject(ControllerConstants.GET_USER_ERROR_DOES_NOT_EXISTS));
         }
-        return ResponseEntity.ok(ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(user));
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(user);
     }
 
 }
