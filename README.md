@@ -7,8 +7,11 @@ Welcome to the Harbor take home project. We hope this is a good opportunity for 
 Build us a REST API for calendly. Remember to support
 
 - Setting own availability
+  - You can use POST http://localhost:8081/api/availability/save with the created DTO to set your availability.
 - Showing own availability
+  - You can use GET http://localhost:8081/api/availability/{userId} to get the specific user's availability.
 - Finding overlap in schedule between 2 users
+  - You can use GET http://localhost:8081/api/availability/overlap/{user1}/{user2} to get overlap between the 2 user's availability
 
 It is up to you what else to support.
 
