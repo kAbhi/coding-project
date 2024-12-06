@@ -18,7 +18,7 @@ public class UserValidator {
         return user != null;
     }
 
-    public boolean checkIfUserExistsByUserId(String userId) {
+    public boolean checkIfUserExistsByUserId(Long userId) {
         User user = userRepo.fetchUserByUserId(userId);
         return user != null;
     }

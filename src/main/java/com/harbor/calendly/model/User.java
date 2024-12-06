@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Entity
@@ -22,7 +23,7 @@ public class User {
     private String email;
     private String phoneNumber;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Availability> availabilities;
+    private Map<String, Availability> availabilities;
 
     public static User transform(UserDTO userDTO) {
         User user = new User();

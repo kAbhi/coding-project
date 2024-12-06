@@ -18,10 +18,11 @@ public class AvailabilityValidator {
 
     public boolean validateInputDTO(AvailabilityDTO availabilityDTO) {
         boolean userIdExists = userValidator.checkIfUserExistsByUserId(availabilityDTO.getUserId());
-        boolean validAvailabilityDays = validateDays(availabilityDTO.getAvailabilityMap().keySet());
-        boolean validTimeSlots = validateTimeSlots(availabilityDTO.getAvailabilityMap().values());
+//        boolean validAvailabilityDays = validateDays(availabilityDTO.getAvailabilityMap().keySet());
+//        boolean validTimeSlots = validateTimeSlots(availabilityDTO.getAvailabilityMap().values());
 
-        return userIdExists && validAvailabilityDays && validTimeSlots;
+//        return userIdExists && validAvailabilityDays && validTimeSlots;
+        return userIdExists;
     }
 
     private boolean validateDays(Set<String> daysList) {

@@ -7,6 +7,6 @@ public interface UserRepo extends JpaRepository<User, String> {
 
     public User save(User user);
     public User fetchUserByEmail(String email);
-    public User fetchUserByUserId(String userId);
+    public User fetchUserByUserId(Long userId);
 
 }
