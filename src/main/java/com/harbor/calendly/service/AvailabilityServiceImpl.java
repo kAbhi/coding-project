@@ -16,8 +16,9 @@ public class AvailabilityServiceImpl implements AvailabilityService {
 
     @Override
     public Availability save(AvailabilityDTO availabilityDTO) {
-        Availability availability = Availability.transform(availabilityDTO);
-        return availabilityRepo.save(availability);
+//        Availability availability = Availability.transform(availabilityDTO);
+//        return availabilityRepo.save(availability);
+        return null;
     }
 
     @Override

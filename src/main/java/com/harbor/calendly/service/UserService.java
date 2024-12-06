@@ -7,4 +7,5 @@ public interface UserService {
 
     public User save(UserDTO userDTO);
     public User fetchUserByEmail(String email);
+    public User fetchUserByUserId(String userId);
 }

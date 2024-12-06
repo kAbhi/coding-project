@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
     public User fetchUserByEmail(String email) {
         return userRepo.fetchUserByEmail(email);
     }
+
+    @Override
+    public User fetchUserByUserId(String userId) {
+        return userRepo.fetchUserByUserId(userId);
+    }
 }
