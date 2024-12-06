@@ -25,7 +25,7 @@ public class AvailabilityServiceImpl implements AvailabilityService {
 
     @Override
     public Availability save(AvailabilityDTO availabilityDTO) {
-        User user = userRepo.findById(availabilityDTO.getUserId());
+        User user = userRepo.findById(availabilityDTO.getUserId()).get();
         Availability availability = new Availability(user, availabilityDTO.getStartTime(), availabilityDTO.getEndTime());
         Availability savedAvailabilityEntity = availabilityRepo.save(availability);
         return savedAvailabilityEntity;

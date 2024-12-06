@@ -49,7 +49,8 @@ dependencies {
     api("org.springframework.cloud:spring-cloud-starter-loadbalancer:${springLoadBalancerVersion}")
 
     // H2 database
-    api("com.h2database:h2")
+//    api("com.h2database:h2")
+    api("mysql:mysql-connector-java:8.0.33")
 
     // Log4j
     api("org.apache.logging.log4j:log4j-core")
